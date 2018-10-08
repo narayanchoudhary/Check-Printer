@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Check Printer</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./check/check.css">
+    <link rel="stylesheet" type="text/css" href="./check/settings.css">
+    <link rel="stylesheet" href="node_modules/jquery-modal/jquery.modal.min.css" />
+    
+    <script src="./check/check.js"></script>
+    <script src="./check/settings.js"></script>
+    <script src="node_modules/jquery-modal/jquery.modal.min.js"></script>
+
+  </head>
+  <body>
+      <div class="print-me" >
+        <p id="date-l"></p>
+        <p id="name-l"></p>
+        <p id="amount-l"></p>
+        <p id="word-me-l"></p>
+      </div>
+        <div class="container dont-print-me">
+          <div class="row">
+              <div class="col-sm-5 form-wrapper" id="borii">
+                <form>
+                  <div class="form-group">                  
+                    <div class="autocomplete">
+                      <a tabIndex="-1" data-id="name" href="#settingForm" rel="modal:open" class="labela settingElement">
+                        <label for="name" id="nameLabel">Name</label>
+                      </a>
+                      <input type="text" class="form-control" id="name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <a tabIndex="-1" data-id="date" href="#settingForm" rel="modal:open" class="labela settingElement">
+                      <label for="date">Date</label>
+                    </a>
+                    <div class="dateOutter">
+                      <div class="dateWrapper">
+                        <input class="dateInput single1" type="text" id="d1" placeholder="d"/>
+                        <input class="dateInput single2" type="text" id="d2" placeholder="d"/>
+                      </div>
+                      <div class="minus"></div>
+                      <div class="dateWrapper" >
+                        <input class="dateInput single3" type="text" id="m1" placeholder="m"/>
+                        <input class="dateInput single4" type="text" id="m2" placeholder="m"/>
+                      </div>
+                      <div class="minus"></div>
+                      <div class="dateWrapper" >
+                        <input class="dateInput" type="text" disabled="true" id="year" value="2018" maxlength="4" placeholder="YYYY"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <a tabIndex="-1" data-id="amount" href="#settingForm" rel="modal:open" class="labela settingElement">
+                      <label for="amount">Amount</label>
+                    </a>
+                    <input type="text" class="form-control" id="amount" onchange="onChangeHandler(this)">
+                  </div>
+                  <div class="form-group">
+                    <a tabIndex="-1" data-id="word" href="#settingForm" rel="modal:open" class="labela settingElement">
+                      <label for="word-me">InWords</label>
+                    </a>
+                    <div id="word-me-div"></div>
+                    <input hidden type="text" class="form-control" id="word-me" disabled="true">
+                  </div>
+                  <a onclick="printDiv('bori')" class="btn btn-default btn-primary btn-block">Print</a>
+                </form>
+            </div>
+          </div>
+        </div>
+    <script>
+    // You can also require other files to run in this process
+    require('./renderer.js');
+    </script> 
+    <div class="modal" id="settingForm">
+      <div class="settingHeadingWrapper">
+        <div id="settingHeading">
+          NAME
+        </div>
+      </div>
+      <div class="settingWrapper">
+        <div class="text-center">
+          <label>Top</label>
+          <input class="form-control settingInput top" id="settingTop"  type="text" />
+          <input type="hidden" id="whichElement">
+        </div>
+        <div class="text-center">
+          <label>Left</label>
+          <input class="form-control settingInput left" id="settingLeft" type="text" />
+        </div>
+        <div>
+            <button id="saveSetting" class="btn btn-sm btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+    <a id="closer" href="#settingForm" rel="modal:close"></a>
+
+    <div id="passwordBox" class="modal">
+      <p class="productId" >Product-Id: <span id="productId"></span></p>
+      <div class="passwordWrapper">
+        <input class="form-control" type="text" id="passwordKey"></input>
+        <button class="btn btn-sm btn-primary" id="passwordSubmit" >Submit</button>
+      </div>
+      <a id="closePassword" style="display:none;" href="#" rel="modal:close">Close</a>
+    </div>
+    <p style="display:none;"><a href="#passwordBox" id="showPasswordPromt" rel="modal:open">Open Modal</a></p>
+
+    <div class="help">Help +91 8889115906 </div>
+  </body>
+</html>

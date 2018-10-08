@@ -1,0 +1,56 @@
+{
+  "name": "check-printer",
+  "productName": "Check Printer",
+  "version": "0.0.1",
+  "license": "CC0-1.0",
+  "description": "Check Printer",
+  "author": "Hariom Traders",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "start": "npm install && electron .",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "build": {
+    "appId": "checkprinter",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "build/check.ico"
+    }
+  },
+  "devDependencies": {
+    "devtron": "^1.4.0",
+    "electron": "^1.8.4",
+    "electron-builder": "^20.13.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.3",
+    "electron-remote": "^1.2.0",
+    "jquery": "^3.2.1",
+    "jquery-modal": "^0.9.1",
+    "nedb": "^1.8.0",
+    "node-machine-id": "^1.1.10",
+    "popper.js": "^1.14.3"
+  }
+}

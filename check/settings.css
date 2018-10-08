@@ -1,0 +1,48 @@
+.settingHeadingWrapper {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    border-top: 1px solid #ccc;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 3px 0px;
+    text-align: center;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+#settingForm {
+    overflow: initial;
+}
+
+.form-wrapper .labela {
+    color: black !important;
+    background-color: transparent;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.form-wrapper .labela:hover {
+    background-color: transparent;
+}
+
+.settingWrapper label{
+    font-weight: bold;
+}
+
+.settingWrapper {
+    display: flex;
+    width: 400px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settingInput {
+    width: 70px;
+    margin: 4px;
+}
+
+.settingWrapper .settingInput {
+    display: inline-block;
+}

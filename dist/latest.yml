@@ -1,0 +1,9 @@
+version: 0.0.1
+files:
+  - url: check-printer-setup-0.0.1.exe
+    sha512: HjMMoW85AW1vZVPj6XX53N6ecFOAVYDFLWjRnKXxPpFQ8V8RIod0nv67nxsgPLs9eRd/oBA2bOL4X6PVvdgZGw==
+    size: 31724422
+path: check-printer-setup-0.0.1.exe
+sha512: HjMMoW85AW1vZVPj6XX53N6ecFOAVYDFLWjRnKXxPpFQ8V8RIod0nv67nxsgPLs9eRd/oBA2bOL4X6PVvdgZGw==
+sha2: cee4387fe6572a05dbe7ad7fe009aa46b48e674041d876fe46153a83617c6660
+releaseDate: '2018-05-21T16:39:06.954Z'
