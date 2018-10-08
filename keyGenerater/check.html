@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">	
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="libraries/bootstrap.min.css">
+  <script src="libraries/jquery.js"></script>
+  <script src="libraries/bootstrap.min.js"></script>
+  <script language="javascript" type="text/javascript">
+    
+</script>
+</head>
+<body>
+	<input type="text" id="machineId">
+	<input type="submit" id="btnGenratekey">
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+			$('#btnGenratekey').click(function(){
+				alert(hash($('#machineId').val()));
+			});
+		});
+
+		function hash(value) {
+		    var hash = 0, i, chr;
+		    if (value.length === 0) return hash;
+		    for (i = 0; i < value.length; i++) {
+		      chr   = value.charCodeAt(i);
+		      hash  = ((hash << 5) - hash) + chr;
+		      hash |= 0; // Convert to 32bit integer
+		    }
+		    return hash;
+		};
+
+	</script>
+</body>
+</html>
